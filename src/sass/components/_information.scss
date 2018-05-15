@@ -1,0 +1,52 @@
+.jc-b-information {
+  background-color: $jc-color-bulgarian-rose;
+  padding: 14px;
+  margin: 5px -10px;
+}
+
+.information-container {
+  background-image: url('/images/paper_fibers.png');
+  counter-increment: a-z-counter;
+  display: block;
+  @include padding($jc-gutter);
+
+  @media only screen and (min-width : map-get($jc-breakpoints, 'sm')) {
+    @include padding($jc-gutter $jc-gutter-double);
+  }
+
+  &::before {
+    content: counter(a-z-counter, upper-alpha);
+    display: table-cell;
+    color: $jc-color-dark-candy-apple;
+    font-family: $jc-font-family-standout;
+    line-height: 44px;
+    text-align: left;
+    padding-right: $jc-gutter;
+    vertical-align: top;
+    width: 1em;
+    @include rem(font-size, map-get($jc-font-sizes, 'h1'));
+
+    @media only screen and (min-width : map-get($jc-breakpoints, 'sm')) {
+      width: 1.2em;
+      line-height: 63px;
+      @include rem(font-size, map-get($jc-font-sizes, 'standout'));
+    }
+  }
+
+  .information__content {
+    display: table-cell;
+  }
+
+  .information__header {
+    color: $jc-color-dark-candy-apple;
+    font-family: $jc-font-family-standout;
+    letter-spacing: 2px;
+    margin-top: 0;
+  }
+
+  @media only screen and (min-width : map-get($jc-breakpoints, 'xs')) {
+    p {
+      max-width: 90%;
+    }
+  }
+}

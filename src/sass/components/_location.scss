@@ -1,0 +1,66 @@
+.jc-c-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  margin-left: -1rem;
+  min-width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.ln-o-grid__item {
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-height: 1px;
+  vertical-align: top;
+  padding-left: 1rem;
+  text-align: left;
+  width: 100%;
+
+  @media only screen and (min-width : map-get($jc-breakpoints, 'sm')) {
+    &.ln-u-1-3 {
+      width: 50%;
+    }
+
+    &.ln-u-2-3 {
+      width: 50%;
+    }
+  }
+
+  @media only screen and (min-width : map-get($jc-breakpoints, 'md')) {
+    &.ln-u-1-3 {
+      width: 30%;
+    }
+
+    &.ln-u-2-3 {
+      width: 70%;
+    }
+  }
+}
+
+.ln-c-card {
+  display: block;
+  padding: 1rem;
+  background-color: white;
+  width: 100%;
+
+  dl {
+    @include margin(0 0 1.25rem 0);
+    display: table;
+  }
+
+  dt {
+    display: table-cell;
+    color: $jc-color-bulgarian-rose;
+    font-weight: 700;
+    @include rem(font-size, map-get($jc-font-sizes, 'h6'));
+  }
+
+  dd {
+    display: table-cell;
+    padding-left: 15px;
+    @include rem(font-size, map-get($jc-font-sizes, 'body'));
+  }
+}

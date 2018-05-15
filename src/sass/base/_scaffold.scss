@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('/images/foggy-birds.png');
+  background-color: $jc-color-pastel-grey;
+  color: $jc-color-cape-cod;
+  font-family: $jc-font-family-base;
+  line-height: $jc-font-line-height;
+  box-sizing: border-box;
+  @include rem(font-size, map-get($jc-font-sizes, 'body'));
+}
+
+img {
+  box-sizing: border-box;
+  display: block;
+  height: auto;
+  max-width: 100%;
+  width: auto;
+}
+
+.jc-b-section {
+  display: block;
+  max-width: $jc-max-width;
+  counter-reset: a-z-counter;
+  @include padding(null $jc-gutter);
+  @include margin(null auto);
+
+  @media only screen and (min-width : map-get($jc-breakpoints, 'xs')) {
+    @include padding(null $jc-gutter-double);
+  }
+}
+
+.jc-b-header {
+  @include padding(($jc-gutter-double * 2) null $jc-gutter-double $jc-gutter);
+  h2 {
+    color: $jc-color-cape-cod;
+    font-family: $jc-font-family-standout;
+    margin: 0;
+    @include rem(font-size, map-get($jc-font-sizes, 'h2'));
+
+    @media only screen and (min-width : map-get($jc-breakpoints, 'xs')) {
+      @include rem(font-size, map-get($jc-font-sizes, 'h1'));
+    }
+  }
+}
+
+.clearfix {
+  overflow: auto;
+  &::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+}
+
+.jc-b-block {
+  display: block;
+  background-color: transparent;
+  border-image: url('/images/bg-page-border.png');
+  border-image-slice: 15;
+  border-image-width: 15px;
+  border-image-outset: 10px;
+  border-image-repeat: round;
+  border-width: 1px;
+  border-style: solid;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}

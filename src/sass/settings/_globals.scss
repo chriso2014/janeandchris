@@ -1,0 +1,12 @@
+$jc-breakpoints: (
+  xs: 460px,
+  sm: 720px,
+  md: 990px,
+  lg: 1024px,
+  xl: 1250px
+);
+
+$jc-max-width: map-get($jc-breakpoints, 'lg');
+
+$jc-gutter: 1rem;
+$jc-gutter-double: 1rem * 2;

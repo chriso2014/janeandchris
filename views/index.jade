@@ -1,0 +1,31 @@
+extends layout
+include ./includes/information.jade
+block content
+  section.jc-b-section.clearfix
+    include ./includes/header.jade
+    
+  section.jc-b-section.clearfix
+    include ./includes/photographs.jade
+    
+  section.jc-b-section.clearfix(id='rsvp')
+    header.jc-b-header
+      h2 R.S.V.P
+    div.jc-b-block
+      div.jc-b-information
+        if user.rsvp
+          include ./includes/thankyou.jade
+        else
+          include ./includes/rsvp.jade
+
+  section.jc-b-section.clearfix(id='location')
+    header.jc-b-header
+      h2 Location and details
+    include ./includes/location.jade
+
+  section.jc-b-section.clearfix(id='information')
+    header.jc-b-header
+      h2 A to Z
+    div.jc-b-block
+      div.jc-b-information
+        each item, i in informationlist
+          +information-item(item)

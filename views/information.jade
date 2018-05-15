@@ -1,0 +1,7 @@
+extends layout
+include ./includes/information.jade
+block content
+  h1= title
+  each item, i in informationlist
+    +information-item(item)
+        

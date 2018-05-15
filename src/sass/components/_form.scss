@@ -1,0 +1,224 @@
+$slide-sizes: (
+  'state__height': 40px,
+  'state__width': 80px,
+  'state__before': 32px,
+);
+
+#rsvp-form {
+  display: block;
+  background-image: url('/images/paper_fibers.png');
+  position: relative;
+  padding: 30px 0 10px;
+}
+
+.jc-c-form-group {
+  border: 0;
+  display: block;
+  margin-bottom: 0;
+  padding: 0 1rem 1rem 1rem;
+
+  @media only screen and (min-width : map-get($jc-breakpoints, 'sm')) {
+    padding: 0 0 30px 30px;
+  }
+}
+
+.jc-c-button-group {
+  display: block;
+  margin-bottom: 0;
+  padding: 1rem;
+
+  @media only screen and (min-width : map-get($jc-breakpoints, 'sm')) {
+    padding: 20px 0 20px 26px;
+  }
+}
+
+.jc-c-label {
+  margin-bottom: 0.5rem;
+  margin-right: 1rem;
+  min-width: 200px;
+  display: block;
+  font-family: $jc-font-family-standout;
+  @include rem(font-size, map-get($jc-font-sizes, 'h4'));
+
+  @media only screen and (min-width : map-get($jc-breakpoints, 'sm')) {
+    display: inline-block;
+  }
+}
+
+.jc-c-text-input {
+  background-color: transparent;
+  background-image: none;
+  border-color: $jc-color-bulgarian-rose;
+  display: block;
+  font-family: $jc-font-family-hand;
+  line-height: 50px;
+  letter-spacing: 2px;
+  border-width: 0 0 2px;
+  min-height: 50px;
+  padding: 0 1rem;
+  text-indent: 2px;
+  width: 100%;
+  @include rem(font-size, map-get($jc-font-sizes, 'h4'));
+
+  @media only screen and (min-width : map-get($jc-breakpoints, 'sm')) {
+    display: inline-block;
+    max-width: 360px;
+  }
+}
+
+.jc-c-form-slider {
+  display: block;
+  width: 100%;
+
+  @media only screen and (min-width : map-get($jc-breakpoints, 'sm')) {
+    display: table;
+  }
+
+  input {
+    display: none;
+  }
+}
+
+.jc-c-form-slider__title {
+  vertical-align: middle;
+  font-family: $jc-font-family-standout;
+  width: 100%;
+  @include rem(font-size, map-get($jc-font-sizes, 'h4'));
+
+  @media only screen and (min-width : map-get($jc-breakpoints, 'sm')) {
+    display: table-cell;
+    width: 220px;
+  }
+}
+
+.jc-c-form-slider__mechanism {
+  display: table;
+  margin-top: 1rem;
+
+  @media only screen and (min-width : map-get($jc-breakpoints, 'sm')) {
+    float: left;
+    margin-top: 0;
+  }
+
+  &::before {
+    content: 'no';
+    display: table-cell;
+    padding-right: 8px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    font-family: $jc-font-family-standout;
+  }
+
+  &::after {
+    content: 'yes';
+    display: table-cell;
+    padding-left: 8px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    opacity: 0.7;
+    font-family: $jc-font-family-standout;
+  }
+}
+
+.jc-c-form-slider__state {
+  background-color: $jc-color-azureish-white;
+  border: 1px solid $jc-color-black;
+  border-radius: map-get($slide-sizes, 'state__height');
+  display: table-cell;
+  position: relative;
+  width: map-get($slide-sizes, 'state__width');
+  height: map-get($slide-sizes, 'state__height');
+
+  &::before {
+    background-color: $jc-color-black;
+    color: $jc-color-azureish-white;
+    border-radius: 50%;
+    content: 'X';
+    display: inline-block;
+    font-weight: 700;
+    left: 4px;
+    bottom: 3px;
+    height: map-get($slide-sizes, 'state__before');
+    line-height: map-get($slide-sizes, 'state__before');
+    font-family: $jc-font-family-standout;
+    position: absolute;
+    text-align: center;
+    transition: transform 0.4s;
+    width: map-get($slide-sizes, 'state__before');
+  }
+}
+
+input:checked + .jc-c-form-slider__mechanism {
+  &::before {
+    opacity: 0.7;
+  }
+
+  &::after {
+    opacity: 1;
+  }
+
+  > .jc-c-form-slider__state {
+    background-color: $jc-color-jungle-green;
+
+    &::before {
+      background-color: #fff;
+      color: $jc-color-black;
+      transform: translateX(map-get($slide-sizes, 'state__height'));
+      content: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMC8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvVFIvMjAwMS9SRUMtU1ZHLTIwMDEwOTA0L0RURC9zdmcxMC5kdGQnPjxzdmcgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMjQgMjQiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjAiIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PHBvbHlsaW5lIGNsaXAtcnVsZT0iZXZlbm9kZCIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBpZD0iRG9uZV9feDIwMTRfX0Rpc3BsYXllZF9vbl90aGVfbGVmdF9zaWRlX29mX2FfY29udGV4dHVhbF9hY3Rpb25fYmFyX194MjhfQ0FCX3gyOV9fdG9fYWxsb3dfdGhlX3VzZXJfdG9fZGlzbWlzc19pdC5fMV8iIHBvaW50cz0iICAyMCw2IDksMTcgNCwxMiAiIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBzdHJva2Utd2lkdGg9IjIiLz48L3N2Zz4=');
+    }
+  }
+}
+
+.jc-c-button {
+  background-color: $jc-color-black;
+  border: 10px double $jc-color-azureish-white;
+  color: $jc-color-azureish-white;
+  cursor: pointer;
+  font-family: $jc-font-family-standout;
+  text-align: center;
+  line-height: 60px;
+  min-height: 60px;
+  width: 100%;
+  padding: 0 1rem;
+  @include rem(font-size, map-get($jc-font-sizes, 'h2'));
+
+  @media only screen and (min-width : map-get($jc-breakpoints, 'sm')) {
+    min-width: 360px;
+    width: auto;
+  }
+}
+
+.jc-c-stamp {
+  background-image: url('/images/pic-stamp.png');
+  background-size: cover;
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  width: 100px;
+  height: 121px;
+  transform : rotate(3deg);
+  z-index: 2;
+  display: none;
+
+  @media only screen and (min-width : map-get($jc-breakpoints, 'md')) {
+    display: block;
+  }
+}
+
+.jc-c-thankyou {
+  font-family: $jc-font-family-hand;
+  color: $jc-color-dark-candy-apple;
+  margin-left: 30px;
+  margin-right: 20px;
+  @include rem(font-size, map-get($jc-font-sizes, 'h1'));
+  @include rem(line-height, (map-get($jc-font-sizes, 'h1') + 10px));
+}
+
+.jc-c-message {
+  color: $jc-color-bulgarian-rose;
+  font-family: $jc-font-family-standout;
+  margin-left: 30px;
+  margin-right: 20px;
+  @include rem(font-size, map-get($jc-font-sizes, 'h2'));
+  @include rem(line-height, (map-get($jc-font-sizes, 'h2') + 10px));
+}

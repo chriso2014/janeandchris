@@ -1,0 +1,18 @@
+$jc-font-family-base: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+$jc-font-family-standout: 'Fredericka the Great', cursive;
+$jc-font-family-hand: 'Satisfy', cursive;
+
+$jc-font-sizes: (
+  'handwriting': 112px,
+  'standout': 80px,
+  'h1': 42px,
+  'h2': 28px,
+  'h3': 24px,
+  'h4': 20px,
+  'h5': 20px,
+  'h6': 18px,
+  'body': 16px
+);
+
+$jc-font-base: map-get($jc-font-sizes, 'body');
+$jc-font-line-height: 1.75rem;

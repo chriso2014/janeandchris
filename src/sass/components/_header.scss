@@ -1,0 +1,61 @@
+.jc-c-hero {
+  overflow: hidden;
+}
+
+.jc-c-welcome {
+  color: $jc-color-bulgarian-rose;
+  font-family: $jc-font-family-standout;
+  text-align: center;
+  @include rem(font-size, map-get($jc-font-sizes, 'h2'));
+  @include rem(line-height, (map-get($jc-font-sizes, 'h2') + 10px));
+
+  @media only screen and (min-width : map-get($jc-breakpoints, 'xs')) {
+    @include rem(font-size, map-get($jc-font-sizes, 'h1'));
+    @include rem(line-height, (map-get($jc-font-sizes, 'h1') + 10px));
+  }
+}
+
+.jc-c-hero__title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  @media only screen and (min-width : map-get($jc-breakpoints, 'sm')) {
+    flex-direction: row;
+  }
+
+  img {
+    width: 30%;
+    min-width: 250px;
+    margin-top: 10px;
+    @media only screen and (min-width : map-get($jc-breakpoints, 'sm')) {
+      margin-top: -20px;
+    }
+  }
+}
+
+.jc-c-hero__name {
+  font-family: $jc-font-family-hand;
+  color: $jc-color-dark-candy-apple;
+  @include rem(font-size, map-get($jc-font-sizes, 'standout'));
+  @include rem(line-height, map-get($jc-font-sizes, 'standout'));
+
+  @media only screen and (min-width : map-get($jc-breakpoints, 'sm')) {
+    @include rem(font-size, map-get($jc-font-sizes, 'handwriting'));
+    @include rem(line-height, map-get($jc-font-sizes, 'handwriting'));
+  }
+
+  span {
+    color: $jc-color-cape-cod;
+    display: block;
+    font-family: $jc-font-family-base;
+    text-align: center;
+    @include rem(font-size, map-get($jc-font-sizes, 'h5'));
+    @include rem(line-height, map-get($jc-font-sizes, 'h5'));
+
+    @media only screen and (min-width : map-get($jc-breakpoints, 'sm')) {
+      margin-top: 1rem;
+    }
+  }
+}

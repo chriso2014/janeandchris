@@ -1,0 +1,20 @@
+form(role='form', id='rsvp-form', action='/?user=#{user.userid}#rsvp', method='post')
+  .jc-c-stamp
+  input(type='hidden', id='user', name='user', value='#{user.userid}')
+  .jc-c-form-group
+    label.jc-c-label(for='guestname') Guest name
+    input(type='text', placeholder='Enter your name', id='guestname', name='guestname', class='jc-c-text-input', value='#{user.familyname}')
+  .jc-c-form-group
+    label.jc-c-label(for='adults') Number of adults
+    input(type='number', placeholder='Adults', id='adults', name='adults', min="0", max="2", step="1", class='jc-c-text-input', value='#{user.adults}')
+  .jc-c-form-group
+    label.jc-c-label(for='children') Number of children
+    input(type='number', placeholder='Children', id='children', name='children', min="0", max="6", step="1", class='jc-c-text-input', value='#{user.children}')
+  .jc-c-form-group
+    label.jc-c-form-slider(for='attending')
+      span.jc-c-form-slider__title I will be attending
+      input(type="checkbox", id='attending', name='attending')
+      span.jc-c-form-slider__mechanism
+        span.jc-c-form-slider__state      
+  .jc-c-button-group
+    button.jc-c-button(type='submit') Send R.S.V.P
