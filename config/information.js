@@ -97,8 +97,38 @@ information = {
     },
 		{
       id: 'T',
-			heading: 'Tube stations',
+			heading: 'Ties',
+      content: 'Shirt and tie is not a must, however, I will be looking sharp so if you don\'t want to look a complete scruffbag in comparison you may want to make some effort.'
+    },
+		{
+      id: 'U',
+			heading: 'Underground stations',
       content: 'The nearest tube station is Chancery Lane, followed by Farringdon. If you are coming from St Albans or Harpenden, then City Thamelink station is very close indeed.'
+    },
+		{
+      id: 'V',
+			heading: 'Vino',
+      content: 'lorem ipsum dsds sdsd sdsdsd'
+    },
+		{
+      id: 'W',
+			heading: 'When',
+      content: 'The top floor is available from 4:30pm but the bar is very large so please feel free to meetup on the ground floor beforehand.'
+    },
+		{
+      id: 'X',
+			heading: 'Xylophones',
+      content: 'There may or may not be a xylophone being played as you enter the venue. It could also be that we couldn\'t think of anything starting with x. You be the judge.'
+    },
+		{
+      id: 'Y',
+			heading: 'Yawn... last orders',
+      content: 'Technically last orders are at midnight but we understand that we will be given a generous amount of time afterwards to wind down the party.'
+    },
+		{
+      id: 'Z',
+			heading: 'ZZZZZZZZ',
+      content: 'Thanks for reading. If you have got this far then well done. You have the patients of a saint!'
     },
 	]
 }
